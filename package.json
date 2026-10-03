@@ -1,0 +1,15 @@
+{
+  "name": "kilos",
+  "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "scripts": {
+    "dev": "pnpm --filter mobile start",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write apps",
+    "format:check": "prettier --check apps"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9"
+  }
+}
