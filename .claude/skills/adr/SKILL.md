@@ -5,7 +5,7 @@ description: Record an architecture decision in docs/adr/. Use when a choice abo
 
 # Architecture Decision Record
 
-Kilos records every significant decision, together with its tradeoffs, so that the team (and future Claude sessions) know *why* things are the way they are.
+Kilos records every significant decision, together with its tradeoffs, so that the team (and future Claude sessions) know _why_ things are the way they are.
 
 ## When the decision isn't made yet
 

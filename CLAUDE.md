@@ -20,16 +20,27 @@ Read the relevant ADRs before proposing structural changes. If a change contradi
 - Repo: pnpm workspace monorepo (`apps/mobile`, `supabase/`) — ADR 0003
 - Kilo chat: `kilo_messages` table + Supabase Realtime — ADR 0004
 - Sign-in: email one-time code only — ADR 0005
+- UI: own design tokens (`apps/mobile/src/theme`) + `StyleSheet`, Inter, Lucide icons — ADR 0006
 
 ## Commands
 
-_None yet — fill in during Phase 1 (install, dev, lint, typecheck, test, db reset, type generation)._
+pnpm is pinned in the root `package.json` (`packageManager`); run it through corepack (`corepack pnpm …`) or after `corepack enable`. Run from the repo root.
+
+- Install: `pnpm install`
+- Dev server: `pnpm dev` (then press `i` for iOS simulator / `a` for Android)
+- Lint: `pnpm lint`
+- Typecheck: `pnpm typecheck`
+- Format: `pnpm format` (writes) / `pnpm format:check`, which cover `apps/` only
+- Add a mobile dependency: from `apps/mobile`, `pnpm expo install <pkg>` (picks SDK-compatible versions)
+
+_Still to add in Phase 1: test, db reset, Supabase type generation._
 
 ## Working agreements
 
 - **Git is done by humans.** Never run git commands that write (add, commit, push, branch, rebase, reset, stash). Read-only git (status, diff, log) is fine. When work is ready, summarise what changed so a human can commit it.
 - **Explain tradeoffs before major decisions.** New dependencies, schema shape, auth, infra, or anything hard to reverse: present options + tradeoffs + a recommendation, wait for sign-off, then record it with the `adr` skill.
 - **Spec before code** for features — use the `feature-spec` skill.
+- **Mobile UI work** (screens, routes, components) follows the `mobile-screen` skill.
 - **Safety and privacy are product features.** Strangers meet in person through this app. Any change touching user data, location, visibility, messaging, or joining goes through the `safety-privacy-review` skill.
 - **Verify before declaring done** — use the `verify` skill and report failures honestly.
 - Database security lives in Postgres Row Level Security, not only in the client. Every new table gets RLS policies in the same migration.
