@@ -142,9 +142,7 @@ export function CreateKilo() {
 
             <View style={styles.guidance}>
               <Info size={14} color={colors.forest} {...iconStroke} />
-              <Text style={styles.guidanceText}>
-                A guide, not a target. Set a pace you can chat at.
-              </Text>
+              <Text style={styles.guidanceText}>Set the pace you want to chase today.</Text>
             </View>
 
             <FormField label="Max participants" style={styles.narrow}>
